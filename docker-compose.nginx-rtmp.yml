@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  rtmp-server:
+    image: alfg/nginx-rtmp:latest  # Use the pre-built NGINX RTMP image
+    container_name: rtmp-server
+    ports:
+      - "1935:1935" # RTMP port
+      - "8080:80" # HTTP port for RTMP statistics
+    restart: unless-stopped
